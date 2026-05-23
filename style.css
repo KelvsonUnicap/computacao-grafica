@@ -1,3 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@400;600;700&display=swap');
+
+:root {
+    --bg: #0a0a0f;
+    --surface: rgba(15, 15, 25, 0.85);
+    --border: rgba(255, 255, 255, 0.08);
+    --text: #e8e8f0;
+    --accent: #ffdd55;
+    --accent2: #ff5f40;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -5,25 +16,129 @@
 }
 
 body {
-    background: #0a0a0f;
+    background: var(--bg);
     overflow: hidden;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
 }
 
 canvas {
     display: block;
 }
 
-#ui {
+/* HUD topo */
+#hud-top {
     position: absolute;
     top: 16px;
     left: 50%;
     transform: translateX(-50%);
-    color: #fff;
-    font-size: 14px;
-    background: rgba(0, 0, 0, 0.6);
-    padding: 8px 20px;
-    border-radius: 8px;
-    text-align: center;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    backdrop-filter: blur(10px);
+    padding: 9px 22px;
+    border-radius: 12px;
+    font-size: 13px;
+    letter-spacing: 0.3px;
     pointer-events: none;
+    white-space: nowrap;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.key-hint {
+    background: rgba(255, 255, 255, 0.07);
+    padding: 2px 8px;
+    border-radius: 5px;
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    color: var(--accent);
+}
+
+/* HUD inferior */
+#hud-bot {
+    position: absolute;
+    bottom: 22px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.hud-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 10px 18px;
+    text-align: center;
+}
+
+.hud-label {
+    font-size: 11px;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 2px;
+}
+
+.hud-value {
+    font-family: 'Space Mono', monospace;
+    font-size: 22px;
+    font-weight: 700;
+    color: #fff;
+}
+
+/* Botões */
+.btn {
+    padding: 11px 20px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s;
+    background: var(--surface);
+    backdrop-filter: blur(10px);
+    color: var(--text);
+}
+
+.btn:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.btn:active {
+    transform: scale(0.96);
+}
+
+.btn-accent {
+    background: var(--accent);
+    color: #000;
+    border-color: var(--accent);
+}
+
+.btn-accent:hover {
+    background: #ffe880;
+    border-color: #ffe880;
+}
+
+.btn-danger {
+    background: var(--accent2);
+    color: #fff;
+    border-color: var(--accent2);
+}
+
+/* Status embaralhando */
+#status {
+    position: absolute;
+    top: 68px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    color: #555;
+    pointer-events: none;
+    font-family: 'Space Mono', monospace;
 }

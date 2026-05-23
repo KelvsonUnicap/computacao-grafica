@@ -3,10 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <title>Cubo Mágico 3D</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-  <div id="ui">Cubo Mágico 3D</div>
+
+  <div id="hud-top">
+    <span class="key-hint">W S D E F T</span>
+    <span style="color:#666">girar face</span>
+    <span style="color:#444">|</span>
+    <span class="key-hint">Shift + tecla</span>
+    <span style="color:#666">anti-horário</span>
+    <span style="color:#444">|</span>
+    <span style="color:#666">Mouse = câmera &amp; zoom</span>
+  </div>
+
+  <div id="status"></div>
+
+  <div id="hud-bot">
+    <button class="btn" id="btn-reset">↺ Resetar</button>
+    <div class="hud-card">
+      <div class="hud-label">Movimentos</div>
+      <div class="hud-value" id="move-count">0</div>
+    </div>
+    <button class="btn btn-accent" id="btn-shuffle">🔀 Embaralhar</button>
+  </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="script.js"></script>

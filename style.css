@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #0a0a0f;
+    overflow: hidden;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+canvas {
+    display: block;
+}
+
+#ui {
+    position: absolute;
+    top: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 14px;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 8px 20px;
+    border-radius: 8px;
+    text-align: center;
+    pointer-events: none;
+}
